@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  obj = {
+    yash: 26,
+
+    vaibhav: 24,
+
+    rajesh: 25,
+  };
+  let avg = 0;
+  let i = 0;
+  for (let keys in obj) {
+    avg = avg + obj[keys];
+    i++;
+  }
+  console.log(i);
+  let average = avg / i;
+  console.log("average is:-", average);
+</script>

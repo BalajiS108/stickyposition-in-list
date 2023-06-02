@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  if (!String.prototype.hasOwnProperty("capitaliseAlternativeChar")) {
+    String.prototype.capitaliseAlternativeChar = function () {
+      console.log("Element: ", this);
+      let result = "";
+      for (let i = 0; i < this.length; i++) {
+        if (i % 2 === 0) {
+          result += this[i];
+        } else {
+          result += this[i].toUpperCase();
+        }
+      }
+
+      return result;
+    };
+  }
+
+  let uName = "vishal";
+  uName = uName.capitaliseAlternativeChar();
+  console.log(typeof uName);
+
+  console.log({ uName });
+</script>
+<script>
+  Array.prototype.twiceOfNo = function (array) {
+    let array1 = [];
+    for (let i = 0; i < array.length; i++) {
+      array1[i] = array[i] * 2;
+    }
+    return array1;
+  };
+  let array = [1, 2, 3, 4, 5];
+  console.log(array.twiceOfNo(array));
+  //   console.log(array.twiceOfNo);
+</script>
+<script>
+  const abc = function () {
+    return "hi";
+  };
+  console.log(abc());
+</script>

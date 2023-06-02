@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    name: "Manas",
+    city: "Pune",
+    state: "MH",
+  };
+
+  // First way
+  /*const name = profile.name;
+  const city = profile.city;
+  const state = profile.state;
+  */
+
+  // Second Way
+  const { name, city, state, country = "India" } = profile;
+  //template string or literals or backticks
+  const message = `Hello ${name}, how are you in ${city} ${state}`;
+  console.log(message);
+</script>
+<script>
+  const profile1 = {
+    name1: "Manas1",
+    city1: "Pune1",
+    state1: "MH1",
+  };
+
+  const { name1, city1, country1 = "India" } = profile1;
+  const message1 = `Hello ${name}, how are you in ${city} ${state} ${country}`;
+  console.log(name1, city1);
+  console.log(message1);
+</script>

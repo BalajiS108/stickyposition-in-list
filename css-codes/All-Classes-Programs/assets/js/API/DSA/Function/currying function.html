@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function addAConstantValue(constant) {
+    return (value) => {
+      return (constant1) => {
+        return constant1 + constant + value;
+      };
+    };
+  }
+
+  const add = addAConstantValue(20);
+  const add1 = add(40);
+  console.log(add1(40));
+</script>

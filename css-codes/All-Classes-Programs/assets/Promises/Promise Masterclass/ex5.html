@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const promiseHandle = (success, failed) => {
+    if (true) {
+      success("Done");
+    } else {
+      failed("Failed");
+    }
+  };
+
+  //const p1 = new Promise(promiseHandle); // First class function, Callback
+
+  const p2 = new Promise((reply, reject) => {
+    if (true) {
+      reply("Done");
+    } else {
+      reject("Failed");
+    }
+  });
+
+  console.log("Promise started");
+
+  const successFunc = (data) => console.log(data);
+  const errFunc = (err) => console.log(err);
+
+  /* p2.then((data) => console.log("Success: ", data)).catch((err) =>
+    console.log("Error: ", err)
+  ); */
+
+  p2.then(successFunc).catch(errFunc); // passing function instead of writing direct code
+
+  for (let i = 1; i < 10; i++) {
+    console.log(i);
+  }
+
+  console.log("Promise Completed");
+</script>

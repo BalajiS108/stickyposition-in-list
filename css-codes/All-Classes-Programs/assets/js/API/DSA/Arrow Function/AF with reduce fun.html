@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  //   console.log("Before", normalFunc, arrowFunc);
+
+  function normalFunc() {
+    console.log("I'm a normal function");
+  }
+
+  var f1 = function () {};
+
+  /* var arrowFunc = () => {
+    console.log("I'm an Arrow Function");
+  }; */
+
+  let arrowFunc = () => {
+    console.log("I'm an Arrow Function");
+  };
+
+  console.log("After", normalFunc, arrowFunc);
+
+  function nSumRegular(...params) {
+    const result = params.reduce(function (acc, current) {
+      //   console.log(acc, current);
+      acc = acc + current;
+      return acc;
+    });
+
+    return result;
+  }
+  console.log(nSumRegular(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+  const nSumArrow = (...params) =>
+    params.reduce((acc, current) => acc + current);
+
+  console.log(nSumArrow(1, 2, 3, 4, 5, 6, 7, 8, 9));
+</script>

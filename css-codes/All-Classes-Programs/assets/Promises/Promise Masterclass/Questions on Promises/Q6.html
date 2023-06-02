@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  /**
+   * This challenge we'll chain promises together using ".then" Create two variables:
+   * firstPromise and secondPromise,Set secondPromise to be a promise that resolves
+   * to "Second!" Set firstPromise to be a promise that resolves to secondPromise Call
+   * the firstPromise with a ".then", which will return the secondPromise> promise.
+   * Then print the contents of the promise after it has been resolved by passing console.log to
+   * .then   */
+  const fourthPromise = new Promise((resolve, reject) => {
+    resolve("Hello, I am in  Forth Promise");
+  });
+
+  const thirdPromise = new Promise((resolve, reject) => {
+    resolve(fourthPromise);
+  });
+
+  const secondPromise = new Promise((resolve, reject) => {
+    resolve(thirdPromise);
+  });
+
+  const firstPromise = new Promise((resolve, reject) => {
+    resolve(secondPromise);
+  });
+
+  firstPromise
+    .then((data) => data)
+    .then((value) => value)
+    .then((value1) => value1)
+    .then((value2) => {
+      console.log(value2);
+    });
+</script>

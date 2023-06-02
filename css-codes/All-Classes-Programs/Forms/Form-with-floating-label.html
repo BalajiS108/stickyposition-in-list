@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* @import url(https://fonts.googleapis.com/css?family=Roboto:100,regular,italic,500,700);
+    body {
+      font-family: “Roboto”;
+      font-size: 16px;
+    } */
+    body {
+      margin: 0;
+    }
+    .container {
+      position: relative;
+      display: block;
+      width: 450px;
+      margin: 50px auto;
+      padding: 16px;
+      background-color: #292929;
+      color: #ffffff;
+      border-radius: 4px;
+    }
+
+    .container h1 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .container .form-element {
+      position: relative;
+      margin: 0 auto;
+      padding-bottom: 16px;
+    }
+
+    .form-element input {
+      box-sizing: border-box;
+      width: 100%;
+      font-family: inherit;
+      padding: 16px 20px 0 20px;
+      height: 50px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      background-color: #444444;
+      color: #ffffff;
+    }
+    .floating-label {
+      position: absolute;
+      box-sizing: border-box;
+      top: 4%;
+      left: 25px;
+      font-size: 18px;
+      cursor: text;
+      color: #8c8c8c;
+    }
+    .btn-sign-in {
+      width: 100%;
+      height: 50px;
+      margin-top: 24px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 5px;
+      border: none;
+      color: #ffffff;
+      background-color: #e50914;
+    }
+    input:focus ~ .floating-label,
+    input:valid ~ .floating-label {
+      font-size: 11px;
+      top: 7px;
+    }
+  </style>
+  <body>
+    <form action="#" class="container">
+      <h1>Sign In</h1>
+      <div class="form-element">
+        <input type="text" name="username" id="username" required />
+        <!-- Floating label method works with the type text & not wit email-->
+        <label class="floating-label" for="username"
+          >Email or Phone Number</label
+        >
+      </div>
+      <div class="form-element">
+        <input type="password" name="password" id="password" required />
+        <label class="floating-label" for="password">Password</label>
+      </div>
+      <button class="btn-sign-in">Sign In</button>
+    </form>
+  </body>
+</html>

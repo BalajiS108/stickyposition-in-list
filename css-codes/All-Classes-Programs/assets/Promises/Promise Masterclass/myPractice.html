@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function greet(name) {
+    console.log({ name });
+  }
+  setTimeout(() => {
+    greet("balaji");
+  }, 2000);
+</script>
+<script>
+  new Promise((resolve, reject) => {
+    if (true) {
+      resolve("Yes");
+    } else {
+      reject("No");
+    }
+    resolve();
+  })
+    .then((succ) => {
+      console.log(succ);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+</script>
+<script>
+  async function callAPI() {
+    try {
+      const result = await fetch("https://jsonplaceholder.typicode.com/posts");
+      console.log(result);
+      if (result.status !== 200) {
+        console.log("Data not found");
+      }
+      let finalResult = await result.json();
+      console.log("Final data:", finalResult);
+    } catch (err) {
+      console.log("Error");
+    }
+  }
+  callAPI();
+</script>
+<script>
+  function sayHello() {
+    setTimeout(() => {
+      console.log("Hello");
+    }, 1000);
+  }
+  sayHello();
+</script>
+<script>
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Resolved");
+    }, 1000);
+  });
+
+  promise.then((data) => {
+    console.log(data);
+  });
+</script>
+<!-- <script>
+  const promise1 = new Promise((resolve, reject) => {
+    reject("Rejected");
+  });
+  promise1.catch(err);
+  if (err) {
+    console.log("status:", err);
+  }
+</script> -->
+<script>
+  const promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("Rejected!");
+    }, 1000);
+  });
+
+  promise2.catch((data) => console.log(data));
+</script>
+<script></script>

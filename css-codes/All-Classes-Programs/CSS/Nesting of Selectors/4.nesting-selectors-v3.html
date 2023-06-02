@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nesting CSS</title>
+
+    <style>
+      .container > p:nth-child(2),
+      .container > p:nth-child(12) {
+        color: red;
+      }
+      p:nth-child(1) {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <div>
+        Div 01
+        <div>
+          Div 02
+          <p>Hello1</p>
+          <p>Hello2</p>
+          <p>Hello3</p>
+          <div>
+            <p>Hello</p>
+          </div>
+        </div>
+      </div>
+      <p>Hello</p>
+    </div>
+    <div>
+      <p>P-1</p>
+      <p>P-2</p>
+      <p>P-3</p>
+    </div>
+  </body>
+</html>

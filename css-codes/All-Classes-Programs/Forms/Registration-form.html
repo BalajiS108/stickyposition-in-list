@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <div class="divSection">
+      <div class="titleName">
+        <h1>Book a Call</h1>
+        <h3>Book a call slot</h3>
+      </div>
+      <hr />
+      <div class="formSection">
+        <form action="#" onsubmit="getaCall(event)">
+          <label for="name" class="nameLabel">Name</label>
+          <br />
+          <input type="text" name="name" class="name" id="Name" required />
+          <br />
+          <label for="email" class="EmailLabel">Email</label>
+          <br />
+          <input
+            type="email"
+            name="email"
+            class="email"
+            id="Email"
+            required
+          /><br />
+          <label for="phone" class="phoneLabel">Phone</label>
+          <br />
+          <input
+            type="number"
+            name="phone"
+            class="phone"
+            id="Phone"
+            required
+          /><br />
+          <label for="datetime" class="datetimeLabel">Time For Call</label
+          ><br />
+          <input type="time" class="time" name="time" id="Time" /><input
+            type="date"
+            id="Date"
+            name="date"
+          />
+
+          <br />
+          <br />
+          <label>Gender Category</label><br />
+          <input type="radio" name="Gender" id="" /> Male
+          <input type="radio" name="Gender" id="" />Female
+          <br />
+          <br />
+          <button class="button">Get a Call</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="new1.js"></script>
+  </body>
+</html>

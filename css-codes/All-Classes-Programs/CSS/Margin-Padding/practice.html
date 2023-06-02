@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0px;
+    }
+    .m-container {
+      background-color: blue;
+      margin: 100px;
+    }
+    .p-container {
+      background-color: blueviolet;
+      padding: 10px;
+    }
+    .m-parent-container {
+      background-color: brown;
+    }
+    .p-parent-container {
+      background-color: brown;
+    }
+    p {
+      background-color: red;
+    }
+  </style>
+  <body>
+    <div class="m-parent-container">
+      <div class="m-container">
+        <p>margin</p>
+      </div>
+    </div>
+    <div class="p-parent-container">
+      <div class="p-container">
+        <p>padding</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    name: "Reetika",
+    country: "USA",
+    //meraPadosi: "Ajit",
+  };
+
+  const profile1 = [
+    {
+      Fname: "Balaji",
+      city: "Pune",
+      state: "Maharashtra",
+    },
+    {
+      Fname: "Gopal",
+      city: "Chennai",
+      state: "TN",
+    },
+    {
+      Fname: "Krishna",
+      city: "Delhi",
+      state: "Delhi",
+    },
+  ];
+
+  //   Way 1
+  const uName = profile.name;
+  const uCountry = profile.country;
+  const uMeraPadosi = profile.meraPadosi || "NA";
+
+  // Way 2
+  const { name, country, meraPadosi = "Not available" } = profile;
+
+  for (let i = 0; i < profile1.length; i++) {
+    const { Fname, city, state } = profile1[i];
+    console.log({ Fname }, { city }, { state });
+  }
+  console.log({
+    uName,
+    name,
+    uCountry,
+    uCountry,
+    country,
+    meraPadosi,
+    uMeraPadosi,
+  });
+
+  var employee = {
+    firstname: "Jon",
+    lastname: "Snow",
+    dateofbirth: "1990",
+  };
+
+  var { firstname, lastname, dateofbirth } = employee;
+  console.log("Without setting default values");
+  console.log(firstname, lastname, country);
+
+  var {
+    firstname = "default firstname",
+    lastname = "default lastname",
+    country1 = "default country",
+  } = employee;
+  console.log("\n After setting default values");
+  console.log(firstname, lastname, country1);
+</script>
+
+<script>
+  function sum(a = 10, b = 20) {
+    return a + b;
+  }
+
+  sum(90, 20);
+  sum(60);
+  sum();
+</script>

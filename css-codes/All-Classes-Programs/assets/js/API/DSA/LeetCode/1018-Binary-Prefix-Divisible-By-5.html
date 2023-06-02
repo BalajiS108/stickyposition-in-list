@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  /**
+   * 1018. Binary Prefix Divisible By 5
+   */
+
+  function disibleBy5(nums) {
+    let str = "";
+    let result = "";
+    let obj = {};
+    for (let i = 0; i < nums.length; i++) {
+      let intNumber = 0;
+
+      k = i;
+      for (let j = 0; j <= i; j++) {
+        intNumber = intNumber + nums[j] * Math.pow(2, k);
+        k = k - 1;
+      }
+      console.log(intNumber);
+      obj[intNumber] = intNumber % 5 === 0;
+      str = str + obj[intNumber] + " ";
+    }
+    let str1 = str.split(" ");
+    str1.splice(str1.length - 1);
+    return str1;
+  }
+  console.log(disibleBy5([1, 1, 1]));
+</script>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <!-- <form action=""> -->
+      <!-- <div class="firstdiv"> -->
+      <input type="text" name="" id="label" placeholder="label" />
+      <input type="text" name="" id="placeholder" placeholder="placeholder" />
+      <label for="">Choose a option:</label>
+      <select name="select" id="dropbox">
+        <option value="input">TextBox</option>
+        <option value="date">Date</option>
+        <option value="password">Password</option>
+        <option value="email">Email</option>
+        <option value="checkbox">checkbox</option>
+        <option value="radio">radio</option>
+        <option value="range">range</option>
+        <option value="number">number</option>
+      </select>
+      <button onclick="fun(event)" id="btn">Add</button>
+      <div id="mainContainer">
+        <ul id="innerdiv"></ul>
+      </div>
+      <!-- </div> -->
+      <!-- </form> -->
+    </form>
+  </body>
+</html>
+
+<script>
+  const mainContainer = document.getElementById("mainContainer");
+  const innerdiv = document.getElementById("innerdiv");
+
+  label = document.getElementById("label");
+  placeholder = document.getElementById("placeholder");
+
+  // const btn = document.getElementById("btn");
+  // btn.addEventListener("click", fun());
+  function fun() {
+    {
+      const labelDiv = document.createElement("div");
+      const inputDiv = document.createElement("div");
+      event.preventDefault();
+      const select = document.getElementById("dropbox");
+      let li = document.createElement("li");
+      li.style.listStyle = "none";
+      const newElem = document.createElement("input");
+      newElem.type = select.value;
+      console.log(newElem.type);
+      let labelValue = label.value;
+      let placeholderValue = placeholder.value;
+      newElem.placeholder = placeholderValue;
+      // li.append(labelValue);
+      labelDiv.textContent = labelValue;
+      li.appendChild(labelDiv);
+      li.appendChild(newElem);
+      innerdiv.appendChild(li);
+      mainContainer.appendChild(innerdiv);
+      newElem.style.marginLeft = "20px";
+      placeholder.value = "";
+      label.value = "";
+
+      //Creating classes
+      newElem.className = "newElement";
+      li.className = "li";
+      labelDiv.className = "label-div";
+    }
+  }
+</script>
+<style>
+  .li {
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 500px;
+    padding: 20px;
+    border-radius: 4px solid rgb(233, 11, 11);
+    margin-top: 30px;
+  }
+  .newElement {
+    background-color: rgb(70, 69, 69);
+    color: white;
+  }
+  #innerdiv {
+    /* background-color: blueviolet; */
+  }
+  .label-div {
+    width: 200px;
+  }

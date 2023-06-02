@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VSS | Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 700, "GRAD" -25, "opsz" 48;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+      header {
+        box-shadow: 1px 1px 1px 1px silver;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .nav-menu li {
+        list-style-type: none;
+        font-size: 14px;
+      }
+
+      .header-logo {
+        background-color: beige;
+        border-radius: 50%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        padding: 12px;
+      }
+      .header-nav-list {
+        display: none;
+        /* display: block;
+        overflow: hidden; */
+      }
+      .header-hamburger-menu {
+        background-color: beige;
+        border-radius: 50%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        padding: 12px;
+      }
+      .menu-class {
+        display: none;
+      }
+      .item {
+        background-color: rgb(229, 230, 231);
+      }
+      .item:hover {
+        background-color: rgb(127, 129, 131);
+        transition: ease-in-out;
+        cursor: pointer;
+      }
+
+      .menu-class-show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 100;
+        right: 0px;
+        background-color: aqua;
+      }
+
+      @media screen and (min-width: 769px) {
+        .header-nav-list {
+          display: block;
+        }
+
+        .header-hamburger-menu {
+          display: none;
+        }
+        .menu-class-show {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <span>IC</span>
+      </div>
+      <nav class="header-nav-list">
+        <ul class="nav-menu">
+          <li class="nav-item">Home</li>
+          <li class="nav-item">Curriculam</li>
+          <li class="nav-item">Faq</li>
+          <li class="nav-item">About Us</li>
+          <li class="nav-item">Contact Us</li>
+          <li class="nav-item">Blogs</li>
+          <li class="nav-item"><button>Apply to Cohort 9</button></li>
+          <li class="nav-item"><button>Hire from us</button></li>
+        </ul>
+      </nav>
+      <div class="header-hamburger-menu">
+        <button id="btn" onclick="fun()" style="border: none">
+          <span class="material-symbols-outlined"> menu </span>
+        </button>
+      </div>
+    </header>
+    <div id="menu" class="menu-class">
+      <div class="item">Home</div>
+      <div class="item">Curriculam</div>
+      <div class="item">Faq</div>
+      <div class="item">About Us</div>
+      <div class="item">Contact Us</div>
+      <div class="item">Blogs</div>
+    </div>
+  </body>
+</html>
+<script>
+  function fun() {
+    // alert("hello");
+    var element = document.getElementById("menu");
+    element.classList.toggle("menu-class-show");
+  }
+</script>

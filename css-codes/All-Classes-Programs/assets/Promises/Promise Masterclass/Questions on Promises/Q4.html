@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  /**
+   * Question Statement:
+   * Promises are asynchronous and we're now going to prove that they indeed are!
+   * Create a promise and have it resolve with the value of "Promise has been resolved!"
+   * Then uncomment the code at bottom of Challenge 4.
+   *What order do we expect "Promise has been resolved!" and "I'm not the promise!" to print? Why?*/
+
+  const newPromise = new Promise((resolve, reject) =>
+    resolve("Promise has been resolved!")
+  );
+  newPromise.then((data) => {
+    console.log(data);
+  });
+  console.log("I'm not the promise!");
+</script>

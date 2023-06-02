@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // Increment Loop
+  //   for (let i = 1; i <= 5; i + 2) {
+  //     console.log(i);
+  //   }
+
+  //   // Decrement
+  //   for (let i = 5; i >= 1; i--) {
+  //     console.log(i);
+  //   }
+
+  //   //Array
+
+  //   const names = ["ajit", "khushi", "arun", "vikas"];
+
+  //   for (let i = 0; i < names.length; i++) {
+  //     console.log(names[i]);
+  //   }
+
+  //   function fun(n) {
+  //     if (
+  //       n === undefined ||
+  //       n === NaN ||
+  //       n < 1 ||
+  //       typeof n !== "Boolean" ||
+  //       typeof n !== "String"
+  //     ) {
+  //       console.log("enter valid no");
+  //     } else {
+  //       console.log("Ascending order");
+  //       for (i = 1; i <= n; i++) {
+  //         console.log(i);
+  //       }
+  //       console.log("Descending order");
+  //       for (i = n; i >= 1; i--) {
+  //         console.log(i);
+  //       }
+  //     }
+  //   }
+  //   fun(7);
+  // ----------------------------------------------------------------------------------
+  function printNumbers(num) {
+    if (typeof num !== "number") {
+      return "Please enter a valid number";
+    }
+
+    if (num <= 1) {
+      return "Please enter a number greater than 1";
+    }
+
+    for (let i = 1; i <= num; i++) {
+      console.log(i);
+    }
+  }
+
+  printNumbers(5);
+  printNumbers(10);
+  console.log(printNumbers());
+  console.log(printNumbers(null));
+  console.log(printNumbers(false));
+  console.log(printNumbers("ankit"));
+</script>

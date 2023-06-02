@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  setTimeout(() => {
+    console.log("In Set Time out function");
+  }, 3000);
+
+  function x(y) {
+    console.log("x");
+    y();
+  }
+  x(function y() {
+    console.log("y");
+  });
+</script>

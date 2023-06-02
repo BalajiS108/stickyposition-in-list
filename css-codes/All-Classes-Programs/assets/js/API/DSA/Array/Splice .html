@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //  It is used to delete no. of elements from array from perticular index
+  let a = [1, 2, 3, 4, 5, 6, 7];
+  delete a[3]; //It will delete value but index will remain
+  console.log(a); //[1, 2, 3, empty, 5, 6, 7]
+
+  a.splice(4, 2); // start & number of elementsto delete
+  console.log(a); //[1, 2, 3, empty, 7]
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   this.name = "Balaji";
+  const person = {
+    name: "Alice",
+    sayHello: (name) => {
+      console.log("Hello My name is", this.name);
+    },
+  };
+
+  person.sayHello("Balaji"); // Output: "Hello, my name is undefined"
+
+  //   -------------------------------------------
+
+  const person1 = {
+    name: "Alice",
+    sayHello1: function (name) {
+      console.log("Hello my name is", this.name);
+    },
+  };
+
+  person1.sayHello1("Gopal"); // Output: "Hello, my name is Alice"
+</script>

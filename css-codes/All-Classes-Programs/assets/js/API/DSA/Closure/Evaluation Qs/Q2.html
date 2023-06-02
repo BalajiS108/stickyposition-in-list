@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  /*  for (var i = 0; i < 3; i++) {
+    setTimeout(function () {
+      console(i);
+    }, 1000 + i);
+  } */
+</script>
+
+<script>
+  //   function visitMall(user)
+  function visitMall(user) {
+    const cartDetails = {
+      ...user,
+      cart: [],
+    };
+
+    return function (product) {
+      cartDetails.cart.push(product);
+      return cartDetails;
+    };
+  }
+
+  //   const addToCart = visitMall();
+
+  const addToCart = visitMall({ name: "Jagjeet" });
+  console.log(addToCart("kitkat"));
+  console.log(addToCart("tropicana juice"));
+  console.log(addToCart("amul cheese"));
+  console.log(addToCart("oreo biscuit"));
+</script>
+
+<!-- <script>
+  const cart = [];
+
+  const addToCartV2 = (product) => {
+    cart.push(product);
+    return cart;
+  };
+
+  console.log(addToCartV2("apple"));
+  console.log(addToCartV2("mango"));
+  console.log(addToCartV2("pineapple"));
+</script>  -->
+
+<!-- callback example -->
+<script>
+  const fun2 = () => {
+    console.log("Balaji");
+  };
+
+  const fun1 = (fun2) => {
+    console.log("sawant");
+    fun2();
+  };
+
+  //   const fun = fun1();
+  console.log(fun1(fun2));
+</script>

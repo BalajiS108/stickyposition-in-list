@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    .card {
+      display: flex;
+      align-items: center;
+
+      gap: 50px;
+      border: 2px solid rgb(104, 102, 102);
+      border-radius: 2px;
+    }
+    .main-image {
+      display: flex;
+      align-items: flex-start;
+      /* justify-content: center; */
+      margin-left: 0px;
+      border: 2px solid rgb(236, 129, 7);
+      border-radius: 2px;
+    }
+    .peroduct-details {
+      width: 200px;
+      margin-left: 10px;
+      font-weight: bold;
+      /* border: 2px solid red; */
+      border-radius: 2px;
+      /* white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; */
+      /* word-wrap: break-word; */
+    }
+    .Category,
+    .title,
+    .description,
+    .brand,
+    .rating,
+    .price,
+    .discountPercentage {
+      margin-bottom: 15px;
+    }
+  </style>
+  <body>
+    <div id="maincontainer">
+      <!-- <div class="card">
+        <div class="main-image"><img src="" alt="" /> Main Image</div>
+        <div class="peroduct-details">
+          <div class="Category">Category</div>
+
+          <div class="title">Title</div>
+          <div class="description">Description</div>
+          <div class="brand">Brand</div>
+          <div class="rating">Rating</div>
+          <div class="price">Price</div>
+          <div class="discountPercentage">Discount Percentage</div>
+        </div>
+        <button onclick="moreimages()">Click for more images</button>
+        <div id="extraImages"></div>-->
+    </div>
+  </body>
+</html>
+<script>
+  function apiSuccess(data) {
+    return data.json();
+  }
+
+  function apiResult(data) {
+    renderUI(data);
+  }
+
+  function moreimages() {
+    for (let j = 0; j < renderUI.data.products[i].images.length; j++) {
+      extraImages.innerHTML = `
+            <img src=${renderUI.data.products[i].images[j]} alt=""
+            `;
+    }
+  }
+
+  fetch("https://dummyjson.com/products").then(apiSuccess).then(apiResult);
+
+  const mainContainer = document.getElementById("maincontainer");
+
+  function renderUI(data) {
+    for (let i = 0; i < data.products.length; i++) {
+      let extraImages = document.getElementById("extraImages");
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <div class="main-image"><img src=${data.products[i].thumbnail} alt="" /> </div>
+        <div class="peroduct-details">
+          <div class="Category" >* ${data.products[i].category}</div>
+
+          <div class="title">* ${data.products[i].title}</div>
+          <div class="description">* ${data.products[i].description}</div>
+          <div class="brand">* ${data.products[i].brand}</div>
+          <div class="rating">*Rating= ${data.products[i].rating}</div>
+          <div class="price">*Price= ${data.products[i].price}</div>
+          <div class="discountPercentage">* Discount= ${data.products[i].discountPercentage} %</div>
+          <div class="stock">* Stock= ${data.products[i].stock}</div>
+
+        </div>
+        <button onclick="moreimages()">Click for more images</button>
+      <div id="moreImages"></div>
+
+        </div>`;
+
+      mainContainer.appendChild(card);
+    }
+  }
+</script>

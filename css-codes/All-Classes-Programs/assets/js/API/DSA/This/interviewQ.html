@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="class-div" style="display: flex">
+      <div class="inner-div" style="margin-left: auto">A</div>
+      <div class="inner-div">B</div>
+    </div>
+  </body>
+</html>
+<script>
+  function foo() {
+    return (a) => {
+      console.log(this.a);
+    };
+  }
+  var obj1 = { a: 2 };
+  var obj2 = { a: 3 };
+  var bar = foo.call(obj1);
+  bar.call(obj2);
+</script>

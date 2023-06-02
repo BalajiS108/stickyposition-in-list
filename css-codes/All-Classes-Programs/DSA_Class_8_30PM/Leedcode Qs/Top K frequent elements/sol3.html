@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var nums = [15, 15, 20, 20, 20, 30, 30, 30, 30, 30];
+  var k = 2;
+  var output = {};
+  finaloutput = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (!output.hasOwnProperty(nums[i])) {
+      output[nums[i]] = 1;
+    } else {
+      output[nums[i]]++;
+    }
+  }
+  var values1 = Object.values(output).sort();
+  var keys1 = Object.keys(output);
+  console.log(output);
+  console.log(keys1);
+  console.log({ values1 });
+  for (let j = values1.length - 1; j >= values1.length - k; j--) {
+    for (let i = j; i >= 0; i--) {
+      if (output[keys1[i]] === values1[j]) {
+        finaloutput.push(parseInt(keys1[i]));
+      }
+    }
+  }
+  console.log(finaloutput);
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Optional styling for the tooltip */
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: help;
+      }
+
+      .tooltip .tooltip-text {
+        visibility: hidden;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
+      button:active {
+        background-color: blue;
+      }
+      input:focus {
+        background-color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Hover over this text to see a tooltip:
+      <span class="tooltip" title="This is the tooltip text."
+        >Tooltip Example</span
+      >
+    </p>
+    <button>SUBMIT BUTTON</button>
+    <form>
+      <input type="text" name="" id="" />
+    </form>
+  </body>
+</html>

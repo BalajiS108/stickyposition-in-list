@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //     The output of the problems is written on a single line for brevity; your solutions will output each value on a new line like in the example above.
+
+  // 0 100 200 300 400 500 600 700 800 900 1000
+  // 1 2 4 8 16 32 64 128
+  // 0 2 4 6 8 10
+  // 3 6 9 12 15
+  // 9 8 7 6 5 4 3 2 1 0
+  // 1 1 1 2 2 2 3 3 3 4 4 4
+  //  0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
+
+  //   2)Link: https://contactmentor.com/js-loop-exercises-solutions/
+
+  let s1 = "";
+  for (let i = 0; i <= 1000; i = i + 100) {
+    s1 = s1 + " " + i;
+  }
+  console.log(s1);
+
+  let s2 = "";
+  for (let i = 0; i <= 7; i++) {
+    s2 = s2 + " " + Math.pow(2, i);
+  }
+  console.log(s2);
+
+  let s3 = "";
+  for (let i = 0; i <= 5; i++) {
+    s3 = s3 + " " + 2 * i;
+  }
+  console.log(s3);
+
+  let s4 = "";
+  for (let i = 1; i <= 5; i++) {
+    s4 = s4 + " " + 3 * i;
+  }
+  console.log(s4);
+
+  let s5 = "";
+  for (let i = 9; i >= 0; i--) {
+    s5 = s5 + " " + i;
+  }
+  console.log(s5);
+
+  let s6 = "";
+  for (let i = 1; i < 5; i++) {
+    for (let j = 0; j < 3; j++) {
+      s6 = s6 + " " + i;
+    }
+  }
+  console.log(s6);
+
+  let s7 = "";
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 5; j++) {
+      s7 = s7 + " " + j;
+    }
+  }
+  console.log(s7);
+</script>
+
+<!-- --------------------Problems from link------------- -->
+
+<!-- 1. Write a JS code to print numbers from 1 to 10-->
+<script>
+  function printNumbers(n) {
+    console.log("Q1.Ans:");
+    if (typeof n !== "number") {
+      console.log("Enter a valid number");
+      return;
+    }
+    if (n < 0) {
+      console.log("Enter a positive no");
+      return;
+    }
+    for (let i = 1; i <= n; i++) {
+      console.log(i);
+    }
+  }
+  printNumbers(10);
+
+  // 2. Write a JS code to print a 2D array
+
+  function printArray(arr) {
+    console.log("Q2.Ans:");
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr[0].length; j++) {
+        console.log(arr[i][j]);
+      }
+    }
+  }
+  printArray([
+    [1, 2],
+    [3, 4],
+    [5, 6],
+  ]);
+
+  // 3. Write a JS code to print Even numbers in given array
+  function evenNumbers(arr) {
+    console.log("Q3.Ans:");
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] % 2 === 0) {
+        console.log(arr[i]);
+      }
+    }
+  }
+  evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+  // 4. Write a JS code to delete all occurrence of element in given array
+
+  function deleteAllOccurances(arr, n) {
+    console.log("Q4.Ans:");
+    arr = arr.filter((item) => item != n);
+    console.log(arr);
+  }
+  deleteAllOccurances([23, 56, 4, 78, 5, 63, 45, 210, 56], 56);
+
+  // 5. Write a JS code to demonstrate Async loop
+
+  function asyncLoop(n) {
+    console.log("Q5.Ans:");
+
+    for (let i = 0; i < n; i++) {
+      setTimeout(() => {
+        console.log(i);
+      }, i * 1000);
+    }
+  }
+  asyncLoop(5);
+
+  // 6. Write a JS code to find the power of a number using for loop
+  function toFindPower(n, p) {
+    console.log("Q6.Ans:");
+
+    let result = 1;
+    for (let i = 0; i < p; i++) {
+      result = result * n;
+    }
+    console.log(result);
+  }
+  toFindPower(4, 2);
+</script>

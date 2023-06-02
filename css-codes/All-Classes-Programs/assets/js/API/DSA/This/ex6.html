@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The JavaScript <i>this</i> Keyword</h1>
+
+    <button onclick="this.style.color='red'">
+      Click to change my color to red!
+    </button>
+    <button id="id1">Submit</button>
+    <h1 id="id2"></h1>
+  </body>
+  <script>
+    btn = document.getElementById("id1");
+    btn.addEventListener("click", fun());
+    function fun() {
+      let id2 = document.getElementById("id2");
+      id2.innerHTML = this;
+    }
+  </script>
+</html>

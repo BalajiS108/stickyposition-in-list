@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  var addBinary = function (a, b) {
+    let a1 = a.split("");
+    let b1 = b.split("");
+    console.log(a1);
+    console.log(b1);
+
+    let l1 = a1.length;
+    let l2 = b1.length;
+    let no1 = 0;
+    let no2 = 0;
+    for (let i = l1 - 1; i >= 0; i--) {
+      no1 = no1 + a1[i] * Math.pow(2, l1 - 1 - i);
+    }
+    // console.log(no1);
+    for (let i = l2 - 1; i >= 0; i--) {
+      no2 = no2 + b1[i] * Math.pow(2, l2 - 1 - i);
+    }
+
+    let no3 = no1 + no2;
+    console.log(no3);
+    let no4 = [];
+    while (no3 > 0) {
+      let r = 0;
+      r = no3 % 2;
+      no3 = Math.floor(no3 / 2);
+      no4.push(r);
+    }
+    let no5 = "";
+    for (let i = no4.length - 1; i >= 0; i--) {
+      no5 = no5 + no4[i];
+    }
+    if (no4 === "") {
+      return "0";
+    } else {
+      return no5;
+    }
+  };
+
+  console.log(addBinary("110", "10"));
+</script>
+<script>
+  function addBinary(a, b) {
+    let carry = 0;
+    let sum = "";
+
+    // Make a and b of equal length by padding with zeros on the left
+    while (a.length < b.length) {
+      a = "0" + a;
+    }
+    while (b.length < a.length) {
+      b = "0" + b;
+    }
+
+    // Iterate through the strings from right to left, adding digits and carrying when necessary
+    for (let i = a.length - 1; i >= 0; i--) {
+      let digitA = parseInt(a.charAt(i));
+      let digitB = parseInt(b.charAt(i));
+      let digitSum = digitA + digitB + carry;
+
+      if (digitSum >= 2) {
+        carry = 1;
+        digitSum -= 2;
+      } else {
+        carry = 0;
+      }
+
+      sum = digitSum.toString() + sum;
+    }
+
+    // Add final carry if necessary
+    if (carry === 1) {
+      sum = "1" + sum;
+    }
+
+    return sum;
+  }
+  console.log(addBinary("101", "101"));
+</script>

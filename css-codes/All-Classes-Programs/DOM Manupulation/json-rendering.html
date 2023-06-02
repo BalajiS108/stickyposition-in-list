@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Rendering</title>
+    <style>
+      #products {
+        display: flex;
+        gap: 12px;
+      }
+      .product {
+        border: 1px solid silver;
+        padding: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The div that will contain the rendered products -->
+    <div id="products"></div>
+  </body>
+</html>
+
+<script>
+  // The products data in JSON format
+  const mereProducts = [
+    { id: 1, name: "Apple iPhone 14 Pro Max", price: 132000, brand: "apple" },
+    { id: 2, name: "Apple iPhone 13 Pro Max", price: 112000, brand: "apple" },
+    { id: 3, name: "Samsung S23 Ultra", price: 142000, brand: "samsung" },
+    { id: 4, name: "Samsung S22 Ultra", price: 122000, brand: "samsung" },
+  ];
+
+  // Get the container element where the products will be rendered
+  const productContainer = document.getElementById("products");
+
+  // Loop over each product and create an HTML element to represent it
+  for (let i = 0; i < mereProducts.length; i++) {
+    // Create a container for the product item
+    const productItemContainer = document.createElement("div");
+    productItemContainer.className = "product";
+
+    // Create elements for the product name, price, and brand
+    const nameElement = document.createElement("p"); //<p></p>
+    const priceElement = document.createElement("p"); //<p></p>
+    const brandElement = document.createElement("p"); //<p></p>
+
+    // Set the text content of each element to the corresponding product attribute
+    nameElement.textContent = mereProducts[i].name; //<p>mereProducts[i].name</p>
+    priceElement.textContent = mereProducts[i].price; //<p>mereProducts[i].price</p>
+    brandElement.textContent = mereProducts[i].brand; //<p>mereProducts[i].brand</p>
+
+    // Add the name, price, and brands of element sequntially to the productItemContainer
+    productItemContainer.appendChild(nameElement);
+    productItemContainer.appendChild(priceElement);
+    productItemContainer.appendChild(brandElement);
+
+    // Add the productItemContainer to the productsContainer
+    productContainer.appendChild(productItemContainer);
+  }
+</script>

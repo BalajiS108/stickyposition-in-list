@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    @media screen and (max-width: 769px) {
+      .D1 {
+        color: red;
+        font-size: 50px;
+      }
+    }
+    @media screen and (min-width: 769px) {
+      .D1 {
+        color: aqua;
+        background-color: blue;
+        font-size: small;
+      }
+    }
+  </style>
+  <body>
+    <div class="D1">Balaji Shivaji Sawant</div>
+  </body>
+</html>
+<script>
+  let obj = {
+    name: "Vishal",
+    address: {
+      city: "Patna",
+      state: "Bihar",
+    },
+  };
+
+  let obj2 = { ...obj };
+  console.log(obj == obj2);
+  console.log(obj.address == obj2.address);
+</script>
+
+<script>
+  let obj1 = { a: 10, b: 20 };
+  const { a, b } = obj1;
+  console.log(a, b);
+</script>
+
+<script>
+  const result = (function (a) {
+    return (function () {
+      console.log(a);
+      a = 23;
+    })();
+  })(45);
+  console.log(result);
+</script>
+
+<script>
+  const user = {
+    userName: "Jayesh",
+    displayName: function () {
+      console.log(this.userName);
+    },
+  };
+
+  setTimeout(user.displayName, 1000);
+</script>

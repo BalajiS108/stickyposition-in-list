@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function outer(num1) {
+    let counter = 10;
+
+    return function incrementCounter(num) {
+      counter += num + num1;
+      return counter;
+    };
+  }
+
+  let myFunc = outer(100);
+  console.log(myFunc(1)); // 11
+  console.log(myFunc(2)); // 13
+  console.log(myFunc(3)); // 16
+  console.log(myFunc(4)); // 20
+</script>
+<script></script>

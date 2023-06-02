@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  /**
+   * Create another promise. Now have it reject with a value of "Rejected!" without using setTimeout.
+   * Print the contents of the promise after it has been rejected by passing console.log to .catch */
+
+  const newPromise = new Promise((resolve, reject) => {
+    // setTimeOut(reject("Rejected"), 1000);
+    setTimeout(() => {
+      reject("Rejected");
+    }, 1000);
+  });
+  newPromise.catch((data) => {
+    console.log(data);
+  });
+</script>
